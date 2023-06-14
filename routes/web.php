@@ -5,9 +5,11 @@ use App\Http\Controllers\GanadoController;
 use App\Http\Controllers\EspecieController;
 use App\Http\Controllers\PatenteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductorController;
 use App\Http\Controllers\PropiedadController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,9 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('productores', ProductorController::class);
 Route::resource('especies', EspecieController::class);
+Route::resource('categorias', CategoriaController::class);
+Route::resource('productos',ProductoController::class);
+Route::resource('servicios', ServicioController::class);
 
 Route::get('/productores/{productore}/ganado',[GanadoController::class, 'create'])->name('ganado.create');
 Route::post('/productores/{productore}/ganado',[GanadoController::class, 'store'])->name('ganado.store');

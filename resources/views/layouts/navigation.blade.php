@@ -21,6 +21,15 @@
                     <x-nav-link :href="route('especies.index')" :active="request()->routeIs('especies.index')">
                         {{ __('Especies') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
+                        {{ __('Categorias') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('productos.index')" :active="request()->routeIs('productos.index')">
+                        {{ __('Productos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('servicios.index')" :active="request()->routeIs('servicios.index')">
+                        {{ __('Servicios') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -81,6 +90,15 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('especies.index')" :active="request()->routeIs('especies.index')">
                 {{ __('Especies') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
+                {{ __('Categorias') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('productos.index')" :active="request()->routeIs('productos.index')">
+                {{ __('Productos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('servicios.index')" :active="request()->routeIs('servicios.index')">
+                {{ __('Servicios') }}
             </x-responsive-nav-link>
         </div>
 
