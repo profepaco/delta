@@ -17,6 +17,11 @@
                             <x-input-error :messages="$errors->get('productor')" class="mt-2" />
                         </div>
                         <div class="mt-4">
+                            <x-input-label for="UPP" :value="__('UPP')" />
+                            <x-text-input id="UPP" class="block mt-1 w-full" type="text" name="UPP" :value="$productore->UPP" required autofocus autocomplete="UPP" />
+                            <x-input-error :messages="$errors->get('UPP')" class="mt-2" />
+                        </div>
+                        <div class="mt-4">
                             <x-input-label for="lugar" :value="__('Lugar')" />
                             <x-text-input id="lugar" class="block mt-1 w-full" type="text" name="lugar" :value="$propiedad->lugar" required autofocus autocomplete="lugar"/>
                             <x-input-error :messages="$errors->get('lugar')" class="mt-2" />

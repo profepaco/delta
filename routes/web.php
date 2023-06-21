@@ -55,7 +55,7 @@ Route::put('/propiedades/{propiedad}',[PropiedadController::class,'update'])->na
 Route::delete('/propiedades/{propiedad}',[PropiedadController::class,'destroy'])->name('propiedades.destroy');
 
 Route::get('/productores/{productore}/patente',[PatenteController::class, 'create'])->name('patente.create');
-Route::post('/productores/{productore}/propiedades',[PatenteController::class, 'store'])->name('patente.store');
+Route::post('/productores/{productore}/patente',[PatenteController::class, 'store'])->name('patente.store');
 
 
 require __DIR__.'/auth.php';

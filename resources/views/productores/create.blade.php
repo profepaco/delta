@@ -45,17 +45,12 @@
                             <x-input-error :messages="$errors->get('domicilio')" class="mt-2" />
                         </div>
                         <div class="flex flex-wrap -mx-3 mt-4">
-                            <div class="w-full md:w-1/3 px-3">
-                                <x-input-label for="UPP" :value="__('UPP')" />
-                                <x-text-input id="UPP" class="block mt-1 w-full" type="text" name="UPP" :value="old('UPP')" required autofocus autocomplete="UPP" />
-                                <x-input-error :messages="$errors->get('UPP')" class="mt-2" />
-                            </div>
-                            <div class="w-full md:w-1/3 px-3">
+                            <div class="w-full md:w-1/2 px-3">
                                 <x-input-label for="telefono" :value="__('Teléfono')"/>
                                 <x-text-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="old('telefono')" required autofocus autocomplete="telefono" />
                                 <x-input-error :messages="$errors->get('telefono')" class="mt-2" />
                             </div>
-                            <div class="w-full md:w-1/3 px-3">
+                            <div class="w-full md:w-1/2 px-3">
                                 <x-input-label for="esSocio" :value="__('Socio')"/>
                                 <select id="esSocio" name="esSocio" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                     <option>Selecciona una opción</option>

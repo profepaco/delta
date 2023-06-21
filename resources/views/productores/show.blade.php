@@ -150,7 +150,7 @@
                                         Lugar
                                       </x-table-th>
                                       <x-table-th>
-                                        Superficie
+                                        Tipo
                                       </x-table-th>
                                       <x-table-th>
                                         Acciones
@@ -164,7 +164,7 @@
                                             {{$propiedad->lugar}}
                                         </x-table-column>
                                         <x-table-column class="py-2">
-                                            {{$propiedad->superficie}}
+                                            {{$propiedad->superficie.' m2' }}
                                         </x-table-column>
                                         <x-table-column class="py-2">
                                             <a href="{{route('propiedad.edit',['productore'=>$productore,'propiedad'=>$propiedad])}}" class="text-indigo-200 hover:text-indigo-400 mx-2">

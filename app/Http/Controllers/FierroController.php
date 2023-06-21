@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Patente;
+use App\Models\Fierro;
 use App\Models\Productor;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-class PatenteController extends Controller
+class FierroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +20,9 @@ class PatenteController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Productor $productore)
+    public function create()
     {
-        return view('patentes.create',['productore'=>$productore]);
+        //
     }
 
     /**
@@ -31,26 +31,28 @@ class PatenteController extends Controller
     public function store(Request $request, Productor $productore)
     {
         $request->validate([
-            'libro'=>'required',
-            'foja'=>'required'
+            'imagen' => 'required|mimes:jpeg,jpg',
+            'patente_id'=>'required',
         ]);
 
-    
+        $nombre_imagen = 'patente'.Str::uuid().'.'.$request->imagen->extension();  
 
-        $patente = new Patente;
-        $patente->productor_id = $productore->id;
-        $patente->libro = $request->libro;
-        $patente->foja = $request->foja;
+        $request->imagen->move(public_path('uploads'), $nombre_imagen);
 
-        $patente->save();
+        $fierro = new Fierro;
 
+        $fierro->patente_id = $request->patente_id;
+        $fierro->imagen = $nombre_imagen;
+
+        $fierro->save();
         return redirect()->route('productores.show',['productore'=>$productore]);
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Patente $patente)
+    public function show(Fierro $fierro)
     {
         //
     }
@@ -58,7 +60,7 @@ class PatenteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Patente $patente)
+    public function edit(Fierro $fierro)
     {
         //
     }
@@ -66,7 +68,7 @@ class PatenteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Patente $patente)
+    public function update(Request $request, Fierro $fierro)
     {
         //
     }
@@ -74,7 +76,7 @@ class PatenteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Patente $patente)
+    public function destroy(Fierro $fierro)
     {
         //
     }

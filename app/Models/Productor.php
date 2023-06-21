@@ -16,7 +16,6 @@ class Productor extends Model
         'RFC',
         'CURP',
         'INE',
-        'UPP',
         'nombre',
         'apellidos',
         'domicilio',

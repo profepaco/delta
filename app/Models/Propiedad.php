@@ -14,6 +14,7 @@ class Propiedad extends Model
 
     protected $fillable = [
         'productor_id',
+        'UPP',
         'lugar',
         'tipo_tenencia',
         'superficie'

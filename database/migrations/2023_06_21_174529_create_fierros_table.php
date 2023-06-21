@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patentes', function (Blueprint $table) {
+        Schema::create('fierros', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('productor_id');
-            $table->string('foja');
-            $table->string('libro');
+            $table->unsignedBigInteger('patente_id');
+            $table->string('imagen');
+            $table->foreign('patente_id')->references('id')->on('patentes');
             $table->timestamps();
-            $table->foreign('productor_id')->references('id')->on('productores');
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('patentes');
+        Schema::dropIfExists('fierros');
     }
 };

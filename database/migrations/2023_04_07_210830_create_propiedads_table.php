@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('propiedades', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('productor_id');
+            $table->string('UPP')->unique();
             $table->string('lugar');
             $table->string('tipo_tenencia');
             $table->string('superficie');

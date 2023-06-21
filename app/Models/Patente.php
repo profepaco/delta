@@ -5,16 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Patente extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'productor_id','imagen','foja','libro'
+        'productor_id','foja','libro'
     ];
 
     public function productor():BelongsTo{
         return $this->belongsTo(Productor::class);
+    }
+
+    public function fierros(): HasMany{
+        return $this->hasMany(Fierro::class);
     }
 }

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('INE')->unique();
             $table->string('RFC')->unique();
             $table->string('CURP')->unique();
-            $table->string('UPP')->unique();
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('domicilio');
